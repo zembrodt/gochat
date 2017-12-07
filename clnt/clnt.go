@@ -168,7 +168,6 @@ func (client *Client) HandleResponse(conn net.Conn) {
 	defer conn.Close()
     response := &gochat.Msg{}
     response.Retrieve(conn)
-	fmt.Printf("Received %+v\n", response)//debug
 	// Decisions of how to update local cache based on type of response message
 	if response.User == client.Username {
 		// Responses from the server from messages we sent
